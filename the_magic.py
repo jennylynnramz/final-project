@@ -35,18 +35,18 @@ def train_and_save_model():
 
 def make_prediction(input_array):    
     # Convert string input to number
-    if input_array[2] == "Small Town":
-        input_array[2] = 0
-    elif input_array[2] == "Medium City":
-        input_array[2] = 1
-    else:
-        input_array[2] = 2
+    # if input_array[2] == "Small Town":
+    #     input_array[2] = 0
+    # elif input_array[2] == "Medium City":
+    #     input_array[2] = 1
+    # else:
+    #     input_array[2] = 2
 
-    # Yard Size
-    if input_array[7] == "Yes":
-        input_array[7] = 1
-    else:
-        input_array[7] = 0
+    # # Yard Size
+    # if input_array[7] == "Yes":
+    #     input_array[7] = 1
+    # else:
+    #     input_array[7] = 0
     
     Xlist = X.to_numpy()
     # ### HERE BEGINS THE MAGIC unsupervised cluster 
