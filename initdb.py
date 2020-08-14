@@ -7,33 +7,22 @@ user_input = [70, 60, 2, 6000, 600000, 4, 4, 1]
 mytable = '''<table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;"><th></th>
-      <th>Unnamed: 0</th>      <th>house_id</th>
-      <th>property_type</th>
-      <th>address</th>      <th>city</th>
-      <th>state</th>      <th>zip_code</th>
-      <th>price</th>      <th>beds</th>
-      <th>baths</th>      <th>square_feet</th>
-      <th>lot_size</th>
-      <th>year_built</th>
+      <th>Unnamed: 0</th><th>house_id</th>
+      <th>property_type</th><th>address</th>      <th>city</th><th>state</th>      <th>zip_code</th>
+      <th>price</th>      <th>beds</th><th>baths</th>      <th>square_feet</th>
+      <th>lot_size</th>    <th>year_built</th>
       <th>hoa_permonth</th>
-      <th>url</th>      <th>latitude</th>
+      <th>url</th>     <th>latitude</th>
       <th>longitude</th>
-      <th>Summer Temp</th>
-      <th>Winter Temp</th>
-      <th>population</th>
-      <th>pop_cat</th>
-    </tr>  </thead>
-  <tbody>    <tr>
-      <th>0</th>
-      <td>0</td>
-      <td>1</td>
+      <th>Summer Temp</th>      <th>Winter Temp</th><th>population</th>
+      <th>pop_cat</th> </tr>  </thead>
+  <tbody>    <tr>      <th>0</th>
+      <td>0</td>    <td>1</td>
       <td>Single Family Residential</td>
       <td>32996 Heather Glen Ct</td>
       <td>Anchor Point</td>
-      <td>AK</td>
-      <td>99556</td>
-      <td>369900.0</td>
-      <td>5.0</td>
+      <td>AK</td><td>99556</td>
+      <td>369900.0</td><td>5.0</td>
       <td>3.00</td>
       <td>2500.0</td>
       <td>404672.0</td>

@@ -12,9 +12,15 @@ app = Flask(__name__)
 # Database Setup
 from flask_sqlalchemy import SQLAlchemy
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', '')
+# Remove tracking modifications
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
+
+
 # Connects to the database using the app config
 db = SQLAlchemy(app)
-from models import Input_Results
+
+from .models import Input_Results
+print(Input_Results)
 
 # Route that renders the welcome page and receives user inputs
 @app.route("/", methods=["GET", "POST"])
@@ -66,24 +72,26 @@ def user_inputs():
         print(
             f"""
             Hot Coded array:\n
-                Summer Temp: {input_array[0]}\n
-                Winter Temp: {input_array[1]}\n
-                City Size: {input_array[2]}\n
-                House Size: {input_array[3]}\n
-                Budget: {input_array[4]}\n
-                Bedrooms: {input_array[5]}\n
-                Bathrooms: {input_array[6]}\n
-                Yard: {input_array[7]}\n 
-             """)
+            Summer Temp: {input_array[0]}\n
+            Winter Temp: {input_array[1]}\n
+            City Size: {input_array[2]}\n
+            House Size: {input_array[3]}\n
+            Budget: {input_array[4]}\n
+            Bedrooms: {input_array[5]}\n
+            Bathrooms: {input_array[6]}\n
+            Yard: {input_array[7]}\n 
+            """)
 
         
         get_table_data = the_magic.make_prediction(input_array)
         mytable = get_table_data.to_html(classes="results table table-striped")
         
+        # TIMER TO TRACK EFFICIENCY
         post_end_time = time.perf_counter()
         time_spent_processing_post_request = post_end_time - post_start_time
         app.logger.debug("Spent " + str(time_spent_processing_post_request) + " seconds processing POST.")
 
+        # DATABASE
         input_results = Input_Results(user_input=input_array, results=mytable)
         db.session.add(input_results)
         db.session.commit()
