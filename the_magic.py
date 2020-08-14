@@ -31,9 +31,20 @@ def train_and_save_model():
     with open('kmeans.pickle', 'wb') as f:
         pickle.dump(kmeans, f)
 
-#train_and_save_model()    
+#train_and_save_model()  
+#
 
-def make_prediction(input_array):    
+def check_database(input_array):
+    previous_results = db.session.query(Input_Results.user_input, Input_Results.results).all()
+    print(previous_results.user_input)
+    # for db.user_input:
+    # return print(user_input) 
+   
+
+def make_prediction(input_array): 
+
+    check_database(input_array)
+
     # Convert string input to number
     # if input_array[2] == "Small Town":
     #     input_array[2] = 0
@@ -77,4 +88,7 @@ def make_prediction(input_array):
     print("Spent " + str(houselist_timer_end-houselist_timer_start) + " seconds in that housinglist block.")
 
     return results_df
+
+
+
     
