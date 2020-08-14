@@ -6,33 +6,24 @@ db.create_all()
 user_input = [70, 60, 2, 6000, 600000, 4, 4, 1]
 mytable = '''<table border="1" class="dataframe">
   <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Unnamed: 0</th>
-      <th>house_id</th>
+    <tr style="text-align: right;"><th></th>
+      <th>Unnamed: 0</th>      <th>house_id</th>
       <th>property_type</th>
-      <th>address</th>
-      <th>city</th>
-      <th>state</th>
-      <th>zip_code</th>
-      <th>price</th>
-      <th>beds</th>
-      <th>baths</th>
-      <th>square_feet</th>
+      <th>address</th>      <th>city</th>
+      <th>state</th>      <th>zip_code</th>
+      <th>price</th>      <th>beds</th>
+      <th>baths</th>      <th>square_feet</th>
       <th>lot_size</th>
       <th>year_built</th>
       <th>hoa_permonth</th>
-      <th>url</th>
-      <th>latitude</th>
+      <th>url</th>      <th>latitude</th>
       <th>longitude</th>
       <th>Summer Temp</th>
       <th>Winter Temp</th>
       <th>population</th>
       <th>pop_cat</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
+    </tr>  </thead>
+  <tbody>    <tr>
       <th>0</th>
       <td>0</td>
       <td>1</td>
@@ -68723,6 +68714,6 @@ mytable = '''<table border="1" class="dataframe">
   </tbody>
 </table>
 '''
-Input_Results = Input_Results(user_input=input_array, results=mytable)
-db.session.add(Input_Results)
+input_results = Input_Results(user_input=input_array, results=mytable)
+db.session.add(input_results)
 db.session.commit()

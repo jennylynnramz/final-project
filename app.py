@@ -79,6 +79,7 @@ def user_inputs():
         
         get_table_data = the_magic.make_prediction(input_array)
         mytable = get_table_data.to_html(classes="results table table-striped")
+        
         post_end_time = time.perf_counter()
         time_spent_processing_post_request = post_end_time - post_start_time
         app.logger.debug("Spent " + str(time_spent_processing_post_request) + " seconds processing POST.")
