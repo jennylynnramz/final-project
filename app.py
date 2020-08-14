@@ -84,7 +84,7 @@ def user_inputs():
         time_spent_processing_post_request = post_end_time - post_start_time
         app.logger.debug("Spent " + str(time_spent_processing_post_request) + " seconds processing POST.")
 
-        input_results = Input_Results(user_input=input_array, results=mytable)
+        input_results = (user_input=input_array, results=mytable)
         db.session.add(input_results)
         db.session.commit()
 
