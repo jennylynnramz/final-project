@@ -68723,6 +68723,6 @@ mytable = '''<table border="1" class="dataframe">
   </tbody>
 </table>
 '''
-input_results = Input_Results(user_input=input_array, results=mytable)
-db.session.add(input_results)
+Input_Results = Input_Results(user_input=input_array, results=mytable)
+db.session.add(Input_Results)
 db.session.commit()
