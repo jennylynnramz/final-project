@@ -1,4 +1,4 @@
-from housing-recommender.app import db
+from app.app import db
 
 # db.drop_all()
 db.create_all()
