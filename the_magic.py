@@ -35,6 +35,8 @@ def train_and_save_model():
 #
 
 def check_database(input_array):
+
+    from models import Input_Results
     previous_results = db.session.query(Input_Results.user_input, Input_Results.results).all()
     print(previous_results.user_input)
     # for db.user_input:
