@@ -19,7 +19,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 # Connects to the database using the app config
 db = SQLAlchemy(app)
 
-from models.py import Input_Results
+from models import Input_Results
 print(Input_Results)
 
 # Route that renders the welcome page and receives user inputs
@@ -92,8 +92,8 @@ def user_inputs():
         app.logger.debug("Spent " + str(time_spent_processing_post_request) + " seconds processing POST.")
 
         # DATABASE
-        input_results = Input_Results(user_input=input_array, results=mytable)
-        db.session.add(input_results)
+        Input_Results = input_results(user_input=input_array, results=mytable)
+        db.session.add(Input_Results)
         db.session.commit()
 
 
