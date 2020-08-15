@@ -25,28 +25,16 @@ X = housing_training_data[["Summer Temp", "Winter Temp", "pop_cat_hot", "square_
 def train_and_save_model():
 
     from sklearn.model_selection import train_test_split
-    kmeans = KMeans(n_clusters=400)
+    kmeans = KMeans(n_clusters=350)
     kmeans.fit(X)
     
     with open('kmeans.pickle', 'wb') as f:
         pickle.dump(kmeans, f)
 
-#train_and_save_model()    
+#train_and_save_model()  
 
-def make_prediction(input_array):    
-    # Convert string input to number
-    if input_array[2] == "Small Town":
-        input_array[2] = 0
-    elif input_array[2] == "Medium City":
-        input_array[2] = 1
-    else:
-        input_array[2] = 2
 
-    # Yard Size
-    if input_array[7] == "Yes":
-        input_array[7] = 1
-    else:
-        input_array[7] = 0
+def make_prediction(input_array, db): 
     
     Xlist = X.to_numpy()
     # ### HERE BEGINS THE MAGIC unsupervised cluster 
@@ -77,4 +65,7 @@ def make_prediction(input_array):
     print("Spent " + str(houselist_timer_end-houselist_timer_start) + " seconds in that housinglist block.")
 
     return results_df
+
+
+
     
