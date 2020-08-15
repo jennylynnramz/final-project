@@ -25,7 +25,7 @@ X = housing_training_data[["Summer Temp", "Winter Temp", "pop_cat_hot", "square_
 def train_and_save_model():
 
     from sklearn.model_selection import train_test_split
-    kmeans = KMeans(n_clusters=400)
+    kmeans = KMeans(n_clusters=350)
     kmeans.fit(X)
     
     with open('kmeans.pickle', 'wb') as f:
