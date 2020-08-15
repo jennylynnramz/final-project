@@ -1,6 +1,3 @@
-from app import db
-
-
 class Input_Results(db.Model):
     __tablename__ = 'input_results'
 
@@ -8,7 +5,5 @@ class Input_Results(db.Model):
     user_input = db.Column(db.String, primary_key=True)
     results = db.Column(db.String)
 
-    
-
     def __repr__(self):
-        return '<Input_Results %r>' % (self.user_input)
+        return str(user_input) + " :: <br><br>" + str(results)
