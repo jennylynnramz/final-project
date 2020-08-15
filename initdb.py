@@ -3,7 +3,7 @@ from app import Input_Results
 
 db.create_all()
 
-input_array = [70, 60, 2, 6000, 600000, 4, 4, 1]
+input_array = "[70, 60, 2, 6000, 600000, 4, 4, 1]"
 mytable = '''<table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;"><th></th>
