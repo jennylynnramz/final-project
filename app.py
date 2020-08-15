@@ -19,7 +19,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 # Connects to the database using the app config
 db = SQLAlchemy(app)
 
-from .models import Input_Results
+from models.py import Input_Results
 print(Input_Results)
 
 # Route that renders the welcome page and receives user inputs
